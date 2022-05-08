@@ -1,0 +1,12 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://cybergang:UITCyberGang@cybertravel.voesf.mongodb.net/cybertravel_db?retryWrites=true&w=majority
+      auto-index-creation: true
+
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  servlet:
+    context-path: /api/v1
