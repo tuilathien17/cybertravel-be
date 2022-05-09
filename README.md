@@ -45,6 +45,11 @@ POST /tour
 PUT /tour
 DELETE /tour/{id}
 
+#Connection string đến MongoDB Cloud chứa Database
+
+mongodb+srv://cybergang:<password>@cybertravel.voesf.mongodb.net/cybertravel_db?retryWrites=true&w=majority
+
+p/s: vì để đảm bảo tính bảo mật nên mình xin giấu <password> đi, liên hệ tôi để lấy password.
 
 # Thông tin liên hệ
 Nguyễn Thế Thiện - SDT: 0764204982
