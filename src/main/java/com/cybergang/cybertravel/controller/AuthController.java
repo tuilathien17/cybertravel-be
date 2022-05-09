@@ -24,11 +24,11 @@ public class AuthController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/signin")
-    public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto) {
+    public ResponseEntity<?> authenticateUser(@RequestBody LoginDto loginDto) {
         User user = service.findUserByEmail(loginDto.getEmail());
         if (user != null) {
             if (passwordEncoder().matches(loginDto.getPassword(), user.getPassword())) {
-                return new ResponseEntity<>("User signed-in successfully!", HttpStatus.OK);
+                return new ResponseEntity<>(user, HttpStatus.OK);
             }
             return new ResponseEntity<>("Wrong password.", HttpStatus.BAD_REQUEST);
         }
@@ -36,7 +36,7 @@ public class AuthController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/signup")
-    public ResponseEntity<String> registerUser(@RequestBody User user) {
+    public ResponseEntity<?> registerUser(@RequestBody User user) {
         if (service.existsUserByIdentification(user.getIdentification())) {
             return new ResponseEntity<>("ID is already taken!", HttpStatus.BAD_REQUEST);
         }
@@ -45,7 +45,7 @@ public class AuthController {
         }
         user.setPassword(passwordEncoder().encode(user.getPassword()));
         service.addUser(user);
-        return new ResponseEntity<>("User registered successfully!", HttpStatus.OK);
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
 }
