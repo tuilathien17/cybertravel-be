@@ -1,6 +1,5 @@
 package com.cybergang.cybertravel.controller;
 
-import com.cybergang.cybertravel.model.Hotel;
 import com.cybergang.cybertravel.model.User;
 import com.cybergang.cybertravel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
