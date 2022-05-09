@@ -68,7 +68,7 @@ PUT /tour
 DELETE /tour/{id}
 
 
-#Connection string đến MongoDB Cloud chứa Database
+# Connection string đến MongoDB Cloud chứa Database
 
 mongodb+srv://cybergang:<password>@cybertravel.voesf.mongodb.net/cybertravel_db?retryWrites=true&w=majority
 
