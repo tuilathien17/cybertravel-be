@@ -18,40 +18,64 @@ Trước khi chạy project, hãy đảm bảo rằng máy tính đã đảm b�
 
 GET /
 
+
 POST /auth/signup
+
 POST /auth/signin
 
+
 GET /place
+
 GET /place/{id}
+
 POST /place
+
 PUT /place
+
 DELETE /place/{id}
 
+
 GET /user
+
 GET /user/{id}
+
 POST /user
+
 PUT /user
+
 DELETE /user/{id}
 
+
 GET /hotel
+
 GET /hotel/{id}
+
 POST /hotel
+
 PUT /hotel
+
 DELETE /hotel/{id}
 
+
 GET /tour
+
 GET /tour/{id}
+
 POST /tour
+
 PUT /tour
+
 DELETE /tour/{id}
+
 
 #Connection string đến MongoDB Cloud chứa Database
 
 mongodb+srv://cybergang:<password>@cybertravel.voesf.mongodb.net/cybertravel_db?retryWrites=true&w=majority
 
-p/s: vì để đảm bảo tính bảo mật nên mình xin giấu <password> đi, liên hệ tôi để lấy password.
+p/s: vì để đảm bảo tính bảo mật nên mình xin giấu <password> đi, liên hệ mình để lấy password.
 
 # Thông tin liên hệ
+
 Nguyễn Thế Thiện - SDT: 0764204982
 
 
