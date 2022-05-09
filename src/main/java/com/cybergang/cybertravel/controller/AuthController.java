@@ -43,7 +43,7 @@ public class AuthController {
         if (service.existsUserByEmail(user.getEmail())) {
             return new ResponseEntity<>("Email is already taken!", HttpStatus.BAD_REQUEST);
         }
-        passwordEncoder().encode(user.getPassword());
+        user.setPassword(passwordEncoder().encode(user.getPassword()));
         service.addUser(user);
         return new ResponseEntity<>("User registered successfully!", HttpStatus.OK);
     }
