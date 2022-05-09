@@ -5,47 +5,47 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Address {
-    @Field("province_code")
-    private int provinceCode;
+    @Field("province")
+    private String province;
 
-    @Field("district_code")
-    private int districtCode;
+    @Field("district")
+    private String district;
 
-    @Field("ward_code")
-    private int wardCode;
+    @Field("ward")
+    private String ward;
 
     @Field("exact_address")
     private String exactAddress;
 
-    public Address(int provinceCode, int districtCode, int wardCode, String exactAddress) {
-        this.provinceCode = provinceCode;
-        this.districtCode = districtCode;
-        this.wardCode = wardCode;
+    public Address(String province, String district, String ward, String exactAddress) {
+        this.province = province;
+        this.district = district;
+        this.ward = ward;
         this.exactAddress = exactAddress;
     }
 
-    public int getProvinceCode() {
-        return provinceCode;
+    public String getProvince() {
+        return province;
     }
 
-    public void setProvinceCode(int provinceCode) {
-        this.provinceCode = provinceCode;
+    public void setProvince(String province) {
+        this.province = province;
     }
 
-    public int getDistrictCode() {
-        return districtCode;
+    public String getDistrict() {
+        return district;
     }
 
-    public void setDistrictCode(int districtCode) {
-        this.districtCode = districtCode;
+    public void setDistrict(String district) {
+        this.district = district;
     }
 
-    public int getWardCode() {
-        return wardCode;
+    public String getWard() {
+        return ward;
     }
 
-    public void setWardCode(int wardCode) {
-        this.wardCode = wardCode;
+    public void setWard(String ward) {
+        this.ward = ward;
     }
 
     public String getExactAddress() {
@@ -59,9 +59,9 @@ public class Address {
     @Override
     public String toString() {
         return "Address{" +
-                "provinceCode=" + provinceCode +
-                ", districtCode=" + districtCode +
-                ", wardCode=" + wardCode +
+                "province='" + province + '\'' +
+                ", district='" + district + '\'' +
+                ", ward='" + ward + '\'' +
                 ", exactAddress='" + exactAddress + '\'' +
                 '}';
     }
