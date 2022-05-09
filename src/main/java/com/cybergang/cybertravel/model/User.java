@@ -1,14 +1,11 @@
 package com.cybergang.cybertravel.model;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Document("users")
 public class User {
@@ -47,7 +44,7 @@ public class User {
         this.email = email;
         this.identification = identification;
         this.telephone = telephone;
-        this.password = passwordEncoder().encode(password);
+        this.password = password;
     }
 
     public String getId() {
@@ -107,7 +104,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = passwordEncoder().encode(password);
+        this.password = password;
     }
 
     @Override
@@ -122,10 +119,5 @@ public class User {
                 ", telephone='" + telephone + '\'' +
                 ", password='" + password +
                 '}';
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
     }
 }
